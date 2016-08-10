@@ -35,7 +35,7 @@ public class SpamListener implements Listener {
 	
 	@EventHandler
 	public void playerChat(AsyncPlayerChatEvent e) {
-		if(e.isAsynchronous()) {
+		if(e.isAsynchronous() && !e.getPlayer().hasPermission("spamfilter.canspam") && !e.getPlayer().isOp()) {
 			try {
 				Statement s = SpamFilter.c.createStatement();
 				ResultSet rs = s.executeQuery("SELECT * FROM " + SpamFilter.TABLE + " WHERE UUID = '" + e.getPlayer().getUniqueId().toString() + "';");
