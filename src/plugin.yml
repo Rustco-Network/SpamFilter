@@ -1,0 +1,4 @@
+name: SpamFilter
+main: de.thexxturboxx.spamfilter.SpamFilter
+version: 1.0.0
+author: ThexXTURBOXx
